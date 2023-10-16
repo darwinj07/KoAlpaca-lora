@@ -1,0 +1,802 @@
+[
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 저녁 6시 에 알고리즘 과제 추가해줘.",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"알고리즘 과제\",\"endTime\": \"2023-10-15 18:00:00\",\"planType\": \"Todo\",\"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 할일 장보기 추가해줘.",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"장보기\",\"endTime\": \"2023-10-16 23:59:59\",\"planType\": \"Todo\",\"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 8시에 미팅 추가해줘.",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"미팅\",\"startTime\": \"2023-10-16 08:00:00\",\"endTime\": \"2023-10-16 09:00:00\",\"planType\": \"Schedule\",\"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음주 수요일 아는 형님 만나기 추가해줘.",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"아는 형님 만나기\",\"endTime\": \"2023-10-22 23:59:59\",\"planType\": \"Todo\",\"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 7시까지 엄마한테 전화하기",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"엄마한테 전화하기\",\"endTime\": \"2023-10-16 19:00:00\",\"planType\": \"Todo\",\"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 저녁 9시부터 10시까지 이산수학 수업 추가해줘.",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"이산수학 수업\",\"startTime\": \"2023-10-15 21:00:00\",\"endTime\": \"2023-10-15 22:00:00\",\"planType\": \"Schedule\",\"category\": \"수업\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "3일 안에 닭가슴살 시키기",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"닭가슴살 시키기\",\"endTime\": \"2023-10-18 23:59:59\",\"planType\": \"Todo\",\"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "키보드 버리기",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"키보드 버리기\",\"endTime\": \"2023-10-15 23:59:59\",\"planType\": \"Todo\",\"category\": \"잡일\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "설거지하기",
+    "output": "{\"taskType\": \"ADD\",\"title\": \"설거지하기\",\"endTime\": \"2023-10-15 23:59:59\",\"planType\": \"Todo\",\"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 저녁 6시 이후 일정 모두 삭제해줘.",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-15 18:00:00\",\"searchTimeMax\": \"2023-10-15 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 일정 모두 취소",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-15 00:00:00\",\"searchTimeMax\": \"2023-10-15 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 신영이 만나기 취소",
+    "output": "{\"taskType\": \"DELETE\",\"searchTitle\": \"신영이 만나기\",\"searchTimeMin\": \"2023-10-16 00:00:00\",\"searchTimeMax\": \"2023-10-16 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 과제 모두 취소",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"과제\",\"searchTimeMin\": \"2023-10-15 00:00:00\",\"searchTimeMax\": \"2023-10-15 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 수업 다 삭제",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"수업\",\"searchTimeMin\": \"2023-10-16 00:00:00\",\"searchTimeMax\": \"2023-10-16 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 과제 빼고 다 취소해줘.",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"과제\",\"searchTimeMin\": \"2023-10-15 00:00:00\",\"searchTimeMax\": \"2023-10-15 23:59:59\",\"exclude\": true}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 모레 수업 빼고 모두 취소",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"수업\",\"searchTimeMin\": \"2023-10-17 00:00:00\",\"searchTimeMax\": \"2023-10-17 23:59:59\",\"exclude\": true}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 10시 이전에 할일 모두 삭제해줘.",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-15 00:00:00\",\"searchTimeMax\": \"2023-10-15 10:00:00\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "지니간 과제들은 모두 삭제해줘",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 일정 다 빼라",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-16 00:00:00\",\"searchTimeMax\": \"2023-10-16 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "18일 6시 비워",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-18 06:00:00\",\"searchTimeMax\": \"2023-10-18 07:00:00\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일은 아무것도 하지 말자",
+    "output": "{\"taskType\": \"DELETE\",\"searchTimeMin\": \"2023-10-16 00:00:00\",\"searchTimeMax\": \"2023-10-16 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 운동은 하지 말자",
+    "output": "{\"taskType\": \"DELETE\",\"searchCategory\": \"운동\",\"searchTimeMin\": \"2023-10-16 00:00:00\",\"searchTimeMax\": \"2023-10-16 23:59:59\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "알고리즘 과제 내일 오후 3시로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTitle\": \"알고리즘 과제\", \"editEndTimeResult\": \"2023-10-16 15:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "알고리즘 과제 이름을 Algorithm HW2로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTitle\": \"알고리즘 과제\", \"editTitleResult\": \"Algorithm HW2\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 신영이랑 약속 8시로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchTitle\": \"신영이랑 약속\", \"editEndTimeResult\": \"2023-10-16 20:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 엄마랑 전화하기로 한 거 잡일로 바꿔",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"searchTitle\": \"엄마랑 전화하기\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 과제는 다 잡일로 바꿔",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchCategory\": \"과제\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 과제는 다 자정으로 바꿔",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchCategory\": \"과제\", \"editEndTimeResult\": \"2023-10-16 23:59:59\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 과제는 제목을 하기시러잉으로 바꿔줘",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchCategory\": \"과제\", \"editTitleResult\": \"하기시러잉\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "모레 저녁 7시에 컴퓨터 네트워크 과제 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"컴퓨터 네트워크 과제\", \"endTime\": \"2023-10-17 19:00:00\", \"planType\": \"Todo\", \"category\": \"과제\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 약속 모두 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"searchCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "수요일 오전 일정 모두 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-19 00:00:00\", \"searchTimeMax\": \"2023-10-19 11:59:59\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 오후 4시에 청소하기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"청소하기\", \"endTime\": \"2023-10-15 16:00:00\", \"planType\": \"Todo\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 운동 일정 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"searchCategory\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 아침 8시 반에 장보기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"장보기\", \"endTime\": \"2023-10-16 08:30:00\", \"planType\": \"Todo\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 데이트 일정 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchTitle\": \"데이트\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 중에 피아노 연습하기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"피아노 연습하기\", \"endTime\": \"2023-10-15 23:59:59\", \"planType\": \"Todo\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "일요일 점심 약속 2시로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-22 11:00:00\", \"searchTimeMax\": \"2023-10-22 13:59:59\", \"searchCategory\": \"약속\", \"editEndTimeResult\": \"2023-10-22 14:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 영화보기 일정 제목을 Cinema Time으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-20 00:00:00\", \"searchTimeMax\": \"2023-10-20 23:59:59\", \"searchTitle\": \"영화보기\", \"editTitleResult\": \"Cinema Time\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 아침 수업 모두 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 11:59:59\", \"searchCategory\": \"수업\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 오후 수업 제목을 Advanced Math로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 12:00:00\", \"searchTimeMax\": \"2023-10-16 17:59:59\", \"searchCategory\": \"수업\", \"editTitleResult\": \"Advanced Math\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 오후 과제를 생활로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 12:00:00\", \"searchTimeMax\": \"2023-10-15 17:59:59\", \"searchCategory\": \"과제\", \"editCategory\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 운동 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchCategory\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 오전 잡일 모두 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"잡일\", \"startTime\": \"2023-10-20 00:00:00\", \"endTime\": \"2023-10-20 11:59:59\", \"planType\": \"Todo\", \"category\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 저녁 약속을 수업으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-21 18:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchCategory\": \"약속\", \"editCategory\": \"수업\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "월요일 저녁 수업을 기타로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-23 18:00:00\", \"searchTimeMax\": \"2023-10-23 23:59:59\", \"searchCategory\": \"수업\", \"editCategory\": \"기타\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 아침 약속을 잡일로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 06:00:00\", \"searchTimeMax\": \"2023-10-16 11:59:59\", \"searchCategory\": \"약속\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 이산수학 수업을 3시로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchTitle\": \"이산수학 수업\", \"editStartTimeResult\": \"2023-10-21 15:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 토요일 운동 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchCategory\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 밤 약속 제목을 친구와 저녁으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-20 18:00:00\", \"searchTimeMax\": \"2023-10-20 23:59:59\", \"searchCategory\": \"약속\", \"editTitleResult\": \"친구와 저녁\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 아침 과제를 생활로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 06:00:00\", \"searchTimeMax\": \"2023-10-15 11:59:59\", \"searchCategory\": \"과제\", \"editCategory\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 식사 일정을 잡일로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchTitle\": \"식사\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 운동 일정을 5시로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchTitle\": \"운동\", \"editStartTimeResult\": \"2023-10-21 17:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 월요일 잡일 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-23 00:00:00\", \"searchTimeMax\": \"2023-10-23 23:59:59\", \"searchCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 수학 수업 제목을 Advanced Mathematics로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchTitle\": \"수학 수업\", \"editTitleResult\": \"Advanced Mathematics\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 오후 4시 이후 일정을 잡일로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 16:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 잡일 모두 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 금요일 식사 일정을 7시로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-20 00:00:00\", \"searchTimeMax\": \"2023-10-20 23:59:59\", \"searchTitle\": \"식사\", \"editStartTimeResult\": \"2023-10-20 19:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 모든 수업을 약속으로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 00:00:00\", \"searchTimeMax\": \"2023-10-16 23:59:59\", \"searchCategory\": \"수업\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "이번 주 토요일 과제 모두 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchCategory\": \"과제\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 수요일 스터디 9시로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-25 00:00:00\", \"searchTimeMax\": \"2023-10-25 23:59:59\", \"searchTitle\": \"스터디\", \"editStartTimeResult\": \"2023-10-25 21:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 오후 5시부터 6시까지 운동 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"운동\", \"startTime\": \"2023-10-20 17:00:00\", \"endTime\": \"2023-10-20 18:00:00\", \"planType\": \"Schedule\", \"category\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 하는 일 모두 제목을 오늘의 활동으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"editTitleResult\": \"오늘의 활동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 화요일 약속 모두 삭제해.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-17 00:00:00\", \"searchTimeMax\": \"2023-10-17 23:59:59\", \"searchCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 오후 4시부터 5시까지의 모든 일정을 약속으로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-20 16:00:00\", \"searchTimeMax\": \"2023-10-20 17:00:00\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 학교 일정 모두 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"searchTitle\": \"학교\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 목요일 스터디 일정을 잡일로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-19 00:00:00\", \"searchTimeMax\": \"2023-10-19 23:59:59\", \"searchTitle\": \"스터디\", \"editCategory\": \"잡일\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오는 토요일 6시부터 8시까지 스터디 일정 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"스터디\", \"startTime\": \"2023-10-21 18:00:00\", \"endTime\": \"2023-10-21 20:00:00\", \"planType\": \"Schedule\", \"category\": \"과제\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 금요일에는 일정을 추가하지 말아줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"일정 추가 금지\", \"startTime\": \"2023-10-27 00:00:00\", \"endTime\": \"2023-10-27 23:59:59\", \"planType\": \"Schedule\", \"category\": \"기타\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "이번 주 월요일 2시부터 4시까지 식사 일정을 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"식사\", \"startTime\": \"2023-10-16 14:00:00\", \"endTime\": \"2023-10-16 16:00:00\", \"planType\": \"Schedule\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 하루 종일 여가 시간으로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"editTitleResult\": \"여가 시간\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오는 금요일 식사 일정을 점심으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-20 00:00:00\", \"searchTimeMax\": \"2023-10-20 23:59:59\", \"searchTitle\": \"식사\", \"editTitleResult\": \"점심\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 수업 일정 모두 1시간씩 미뤄줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-15 00:00:00\", \"searchTimeMax\": \"2023-10-15 23:59:59\", \"searchCategory\": \"수업\", \"editStartTimeResult\": \"1 HOUR LATER\", \"editEndTimeResult\": \"1 HOUR LATER\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 화요일 스터디 일정 모두 30분씩 미뤄.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-17 00:00:00\", \"searchTimeMax\": \"2023-10-17 23:59:59\", \"searchTitle\": \"스터디\", \"editStartTimeResult\": \"30 MINUTES LATER\", \"editEndTimeResult\": \"30 MINUTES LATER\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 오전 10시에 도서관에서 공부하기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"도서관에서 공부하기\", \"startTime\": \"2023-10-22 10:00:00\", \"endTime\": \"2023-10-22 11:00:00\", \"planType\": \"Schedule\", \"category\": \"공부\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 일요일 약속을 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-23 00:00:00\", \"searchTimeMax\": \"2023-10-23 23:59:59\", \"searchCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "이번 주말에 하는 모든 일정을 약속으로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-22 23:59:59\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 수요일에 미용실 가기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"미용실 가기\", \"startTime\": \"2023-10-19 14:00:00\", \"endTime\": \"2023-10-19 15:30:00\", \"planType\": \"Schedule\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 화요일 2시부터 3시까지 친구와 만나기로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-18 14:00:00\", \"searchTimeMax\": \"2023-10-18 15:00:00\", \"editTitleResult\": \"친구와 만나기\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 금요일 오후에 모임 일정을 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-20 12:00:00\", \"searchTimeMax\": \"2023-10-20 23:59:59\", \"searchTitle\": \"모임\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 수요일에 모든 일정을 비워줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-19 00:00:00\", \"searchTimeMax\": \"2023-10-19 23:59:59\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 점심때 집에서 점심하기 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"집에서 점심하기\", \"startTime\": \"2023-10-22 12:00:00\", \"endTime\": \"2023-10-22 13:00:00\", \"planType\": \"Schedule\", \"category\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 저녁에 집에서 저녁하기로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-16 18:00:00\", \"searchTimeMax\": \"2023-10-16 20:00:00\", \"editTitleResult\": \"집에서 저녁하기\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 월요일 모든 일정을 30분씩 미뤄.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-24 00:00:00\", \"searchTimeMax\": \"2023-10-24 23:59:59\", \"editStartTimeResult\": \"30 MINUTES LATER\", \"editEndTimeResult\": \"30 MINUTES LATER\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 목요일 스터디 후에 친구랑 식사 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"친구랑 식사\", \"startTime\": \"2023-10-20 19:00:00\", \"endTime\": \"2023-10-20 20:30:00\", \"planType\": \"Schedule\", \"category\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "월요일 밤에 책 읽기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"책 읽기\", \"startTime\": \"2023-10-24 21:00:00\", \"endTime\": \"2023-10-24 23:00:00\", \"planType\": \"Schedule\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일에 야구 경기보기 일정 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-21 00:00:00\", \"searchTimeMax\": \"2023-10-21 23:59:59\", \"searchTitle\": \"야구 경기보기\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 오후 2시에 데이트로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-22 14:00:00\", \"searchTimeMax\": \"2023-10-22 15:00:00\", \"editTitleResult\": \"데이트\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 점심때 요리하기 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"요리하기\", \"startTime\": \"2023-10-17 12:00:00\", \"endTime\": \"2023-10-17 13:00:00\", \"planType\": \"Schedule\", \"category\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 화요일 1시부터 2시까지 친구와 커피 마시기로 바꿔.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-18 13:00:00\", \"searchTimeMax\": \"2023-10-18 14:00:00\", \"editTitleResult\": \"친구와 커피 마시기\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "이번 주말에 피아노 연습하기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"피아노 연습하기\", \"startTime\": \"2023-10-22 10:00:00\", \"endTime\": \"2023-10-22 12:00:00\", \"planType\": \"Schedule\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 저녁에 요가 수업 변경해.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-21 18:00:00\", \"searchTimeMax\": \"2023-10-21 19:00:00\", \"editTitleResult\": \"요가 수업\", \"editCategory\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 아침에 강아지 산책시키기 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"강아지 산책시키기\", \"startTime\": \"2023-10-22 08:00:00\", \"endTime\": \"2023-10-22 09:00:00\", \"planType\": \"Schedule\", \"category\": \"생활\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 저녁에 계획된 모임 일정 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-17 18:00:00\", \"searchTimeMax\": \"2023-10-17 20:00:00\", \"searchTitle\": \"모임\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "일요일 점심에 스파게티 요리하기로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-23 12:00:00\", \"searchTimeMax\": \"2023-10-23 13:00:00\", \"editTitleResult\": \"스파게티 요리하기\", \"editCategory\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 달 5일에 회사 동료와 만나기 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"회사 동료와 만나기\", \"startTime\": \"2023-11-05 10:00:00\", \"endTime\": \"2023-11-05 12:00:00\", \"planType\": \"Schedule\", \"category\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "이번 달 마지막 날에 친구와 영화 보기 취소해.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-31 18:00:00\", \"searchTimeMax\": \"2023-10-31 20:00:00\", \"searchTitle\": \"친구와 영화 보기\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "수요일 오후에 테니스 연습 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"테니스 연습\", \"startTime\": \"2023-10-19 14:00:00\", \"endTime\": \"2023-10-19 16:00:00\", \"planType\": \"Schedule\", \"category\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 금요일에 일정 전부 삭제해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-28 00:00:00\", \"searchTimeMax\": \"2023-10-28 23:59:59\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일에 스터디 모임을 친구집에서 모임으로 변경해.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-22 10:00:00\", \"searchTimeMax\": \"2023-10-22 12:00:00\", \"editTitleResult\": \"친구집에서 모임\", \"editCategory\": \"약속\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 책 읽는 시간을 1시간 뒤로 미루자.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-18 14:00:00\", \"searchTimeMax\": \"2023-10-18 15:00:00\", \"editStartTime\": \"2023-10-18 15:00:00\", \"editEndTime\": \"2023-10-18 16:00:00\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "일요일에 교회 다녀오기 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"교회 다녀오기\", \"startTime\": \"2023-10-23 09:00:00\", \"endTime\": \"2023-10-23 11:00:00\", \"planType\": \"Schedule\", \"category\": \"종교\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다가오는 화요일에 세미나 참석하기 취소해줘.",
+    "output": "{ \"taskType\": \"DELETE\", \"searchTimeMin\": \"2023-10-18 14:00:00\", \"searchTimeMax\": \"2023-10-18 17:00:00\", \"searchTitle\": \"세미나 참석하기\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일 아침에 일어나서 산책하기 추가해.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"산책하기\", \"startTime\": \"2023-10-22 07:00:00\", \"endTime\": \"2023-10-22 08:00:00\", \"planType\": \"Schedule\", \"category\": \"운동\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "오늘 오후에 한 일을 오늘 한 일로 변경해줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-17 14:00:00\", \"searchTimeMax\": \"2023-10-17 18:00:00\", \"editTitleResult\": \"오늘 한 일\", \"editCategory\": \"작업\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "월요일 저녁에 가족과 식사 계획 추가해줘.",
+    "output": "{ \"taskType\": \"ADD\", \"title\": \"가족과 식사\", \"startTime\": \"2023-10-24 19:00:00\", \"endTime\": \"2023-10-24 20:30:00\", \"planType\": \"Schedule\", \"category\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "일요일에 기존의 요리하기 계획을 베이킹으로 바꿔줘.",
+    "output": "{ \"taskType\": \"EDIT\", \"searchTimeMin\": \"2023-10-23 12:00:00\", \"searchTimeMax\": \"2023-10-23 14:00:00\", \"editTitleResult\": \"베이킹\", \"editCategory\": \"식사\" }"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 아침 8시까지 독서하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"독서하기\", \"endTime\": \"2023-10-16 08:00:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음주 토요일 10시에 약속",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"약속\", \"startTime\": \"2023-10-21 10:00:00\", \"endTime\": \"2023-10-21 11:00:00\", \"planType\": \"Schedule\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 3일 후에 운동",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동\", \"endTime\": \"2023-10-18 23:59:59\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 점심에 미팅",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"미팅\", \"startTime\": \"2023-10-16 12:00:00\", \"endTime\": \"2023-10-16 13:00:00\", \"planType\": \"Schedule\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 수업 일정 변경",
+    "output": "{\"taskType\": \"EDIT\", \"searchCategory\": \"수업\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "토요일에 일찍 일어나기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"일찍 일어나기\", \"endTime\": \"2023-10-21 23:59:59\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "다음 주 동안 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-22 23:59:59\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "5일 안에 책 읽기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"책 읽기\", \"endTime\": \"2023-10-20 23:59:59\", \"planType\": \"Todo\", \"category\": \"기타\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "내일 4시에 미팅",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"미팅\", \"startTime\": \"2023-10-16 16:00:00\", \"endTime\": \"2023-10-16 17:00:00\", \"planType\": \"Schedule\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "금요일 2일 후에 생일 축하 파티",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"생일 축하 파티\", \"endTime\": \"2023-10-20 23:59:59\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "30 분 뒤 산책 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"산책 가기\", \"endTime\": \"2023-10-15 18:30:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "20 분 뒤 밥 먹기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"밥 먹기\", \"endTime\": \"2023-10-15 18:20:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "15 분 뒤 쇼핑 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"쇼핑 가기\", \"endTime\": \"2023-10-15 18:15:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 운동하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동하기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "25 분 뒤 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-15 18:25:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "30 분 뒤 산책 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"산책 가기\", \"endTime\": \"2023-10-15 18:30:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "20 분 뒤 밥 먹기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"밥 먹기\", \"endTime\": \"2023-10-15 18:20:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "15 분 뒤 쇼핑 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"쇼핑 가기\", \"endTime\": \"2023-10-15 18:15:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 운동하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동하기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "25 분 뒤 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-15 18:25:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "5 분 뒤 전화하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"전화하기\", \"endTime\": \"2023-10-15 18:05:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "40 분 뒤 약속 장소로 이동하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"약속 장소로 이동하기\", \"endTime\": \"2023-10-15 18:40:00\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 공부하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"공부하기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "15 분 뒤 식사하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"식사하기\", \"endTime\": \"2023-10-15 18:15:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "30 분 뒤 친구 만나기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"친구 만나기\", \"endTime\": \"2023-10-15 18:30:00\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "25 분 뒤 가슴 운동",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"가슴 운동\", \"endTime\": \"2023-10-15 18:25:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "20 분 뒤 일어나기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"일어나기\", \"endTime\": \"2023-10-15 18:20:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "15 분 뒤 산책하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"산책하기\", \"endTime\": \"2023-10-15 18:15:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 저녁 먹기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"저녁 먹기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "40 분 뒤 취침하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"취침하기\", \"endTime\": \"2023-10-15 18:40:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 휴식하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"휴식하기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "19 분 뒤 산책 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"산책 가기\", \"endTime\": \"2023-10-15 18:19:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "27 분 뒤 밥 먹기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"밥 먹기\", \"endTime\": \"2023-10-15 18:27:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "22 분 뒤 쇼핑 가기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"쇼핑 가기\", \"endTime\": \"2023-10-15 18:22:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "13 분 뒤 운동하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동하기\", \"endTime\": \"2023-10-15 18:13:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "29 분 뒤 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-15 18:29:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "18 분 뒤 전화하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"전화하기\", \"endTime\": \"2023-10-15 18:18:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "34 분 뒤 약속 장소로 이동하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"약속 장소로 이동하기\", \"endTime\": \"2023-10-15 18:34:00\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10 분 뒤 공부하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"공부하기\", \"endTime\": \"2023-10-15 18:10:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "15 분 뒤 식사하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"식사하기\", \"endTime\": \"2023-10-15 18:15:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "30 분 뒤 친구 만나기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"친구 만나기\", \"endTime\": \"2023-10-15 18:30:00\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "25 분 뒤 가슴 운동",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"가슴 운동\", \"endTime\": \"2023-10-15 18:25:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "20 분 뒤 일어나기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"일어나기\", \"endTime\": \"2023-10-15 18:20:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "1시간 30분 뒤 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-15 19:30:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "2시간 15분 뒤 생활비 지출 내역 확인",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"생활비 지출 내역 확인\", \"endTime\": \"2023-10-15 20:15:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "3시간 45분 뒤 잡일 정리하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"잡일 정리하기\", \"endTime\": \"2023-10-15 21:45:00\", \"planType\": \"Todo\", \"category\": \"잡일\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "4시간 20분 뒤 운동 시작",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동 시작\", \"endTime\": \"2023-10-15 22:20:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "5시간 10분 뒤 약속 준비",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"약속 준비\", \"endTime\": \"2023-10-15 23:10:00\", \"planType\": \"Todo\", \"category\": \"약속\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "6시간 30분 뒤 수업 참여",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"수업 참여\", \"endTime\": \"2023-10-16 00:30:00\", \"planType\": \"Todo\", \"category\": \"수업\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "7시간 45분 뒤 기타 연주 연습",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"기타 연주 연습\", \"endTime\": \"2023-10-16 01:45:00\", \"planType\": \"Todo\", \"category\": \"기타\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "8시간 20분 뒤 과제 완료하기",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"과제 완료하기\", \"endTime\": \"2023-10-16 02:20:00\", \"planType\": \"Todo\", \"category\": \"과제\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "9시간 5분 뒤 생활비 정리",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"생활비 정리\", \"endTime\": \"2023-10-16 03:05:00\", \"planType\": \"Todo\", \"category\": \"생활\"}"
+  },
+  {
+    "instruction": "다음 문장을 parse 해줘. current time: \"2023-10-15 18:00:00\", categoryList: [\"과제\", \"생활\", \"잡일\", \"운동\", \"약속\", \"수업\", \"기타\"]",
+    "input": "10시간 40분 뒤 운동 시작",
+    "output": "{\"taskType\": \"ADD\", \"title\": \"운동 시작\", \"endTime\": \"2023-10-16 04:40:00\", \"planType\": \"Todo\", \"category\": \"운동\"}"
+  }
+]
